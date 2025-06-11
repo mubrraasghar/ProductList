@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: product-page-project
+    env: node
+    nodeVersion: 20.11.1
+    buildCommand: |
+      npm install
+      npm run install-all
+      npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: VITE_API_URL
+        value: https://product-page-project.onrender.com/api
+    healthCheckPath: /api
+    autoDeploy: true 
