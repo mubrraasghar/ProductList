@@ -3,6 +3,7 @@ services:
     name: product-page-project
     env: node
     nodeVersion: 20.11.1
+    rootDir: ProductPageProject
     buildCommand: |
       npm install
       npm run install-all
